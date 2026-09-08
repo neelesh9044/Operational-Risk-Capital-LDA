@@ -22,6 +22,22 @@ quantiles.
 Capital is reported as **Value at Risk and Expected Shortfall at the 90%, 95%, 99%
 and 99.5% levels.**
 
+## Results
+
+Simulated over 10,000 years. Expected annual loss is €5.01m.
+
+| Confidence | VaR | Expected Shortfall | Capital (VaR − EL) |
+|---|---|---|---|
+| 90% | €9.99m | €14.11m | €4.98m |
+| 95% | €12.52m | €17.15m | €7.51m |
+| 99% | €20.06m | €25.84m | €15.04m |
+| 99.5% | €23.90m | €30.13m | €18.89m |
+
+Regulatory capital covers **unexpected** loss, so the capital column is VaR net
+of the expected annual loss — expected losses are provisioned rather than held
+against capital. The simulation is seeded (`default_rng(seed=42)`), so these
+figures reproduce exactly on re-run.
+
 ## Scope and limitations
 
 Stated plainly, because they matter if you're reading this as evidence of
